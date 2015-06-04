@@ -1,1 +1,478 @@
-test
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>随行科技 - 一家专注于汽车后服务的O2O公司</title>
+<meta name="Keywords" content="随行科技 大连随行科技 上门洗车 修车平台 大连上门洗车 在线修车 修车App 修车建议" />
+
+<meta name="Description" content="随行科技是一家专注于汽车后服务的O2O公司。公司主要为车主提供上门洗车、汽车保险、及修车养车服务。为广大车主朋友搭建一个在线和线下相结合的服务平台" />
+
+<meta charset="UTF-8">
+<link href="http://www.sx166.com/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://www.sx166.com/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="http://www.sx166.com/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Google Fonts -->
+<!--- banner Slider starts Here --->
+<script src="http://www.sx166.com/js/responsiveslides.min.js"></script>
+ <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: true,
+        pager: true,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+  </script>
+<!----//End-slider-script---->
+<script type="text/javascript" src="http://www.sx166.com/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	
+	var filterList = {
+	
+		init: function () {
+		
+			// MixItUp plugin
+			// http://mixitup.io
+			$('#portfoliolist').mixitup({
+				targetSelector: '.portfolio',
+				filterSelector: '.filter',
+				effects: ['fade'],
+				easing: 'snap',
+				// call the hover effect
+				onMixEnd: filterList.hoverEffect()
+			});				
+		
+		},
+		
+		hoverEffect: function () {
+		
+			// Simple parallax effect
+			$('#portfoliolist .portfolio').hover(
+				function () {
+					$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+					$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+				},
+				function () {
+					$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+					$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+				}		
+			);				
+		
+		}
+
+	};
+	
+	// Run the show!
+	filterList.init();
+	
+	
+});	
+</script>
+<script type="text/javascript" src="http://www.sx166.com/js/move-top.js"></script>
+<script type="text/javascript" src="http://www.sx166.com/js/easing.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$(".scroll").click(function(event){		
+		event.preventDefault();
+		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+	});
+});
+</script>
+</head>
+<body>
+	<!--- Header Starts Here -->
+		<div class="header" id="home">
+			<div class="container">
+				<div class="logo">
+					<a href="index.php"><img src="http://www.sx166.com/images/logo.png" alt=""/></a>
+				</div>
+				<span class="menu"></span>
+				<div class="clears"></div>
+				<div class="navigation">
+					<ul class="navig">
+						<li><a href="#about" class="scroll"><i class="bag"></i><p>关于我们</p><div class="clears"></div></a></li>
+						<li class="naa" ><a href="#service" class="scroll"><i class="settings"></i><p>服务</p><div class="clears"></div></a></li>
+						<li class="nac"><a href="#blog" class="scroll"><i class="message"></i><p>随行新闻</p><div class="clears"></div></a></li>
+						<li class="nad"><a href="#clients" class="scroll"><i class="like"></i><p>合作伙伴</p><div class="clears"></div></a></li>
+						<li class="nae"><a href="#contact" class="scroll"><i class="send"></i><p>联系我们</p><div class="clears"></div></a></li>
+					</ul>
+				</div>
+				<script>
+					$( "span.menu" ).click(function() {
+					  $( ".navigation" ).slideToggle( "slow", function() {
+					    // Animation complete.
+					  });
+					});
+				</script>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	<!--- Header Ends Here --> 
+	<!-- Banner Starts Here --->
+	<div class="banner">
+		<div class="container">
+		<!-- Slideshow 4 -->
+		    <div  id="top" class="callbacks_container">
+		      <ul class="rslides" id="slider4">
+			        <li>
+			        	<div class="row banner-row">
+							<div class="col-md-6 banner-column">
+								<img src="http://www.sx166.com/images/hand1.png" alt="" />
+							</div>
+							<div class="col-md-6 banner-column ban_cl">
+								<h1>随行洗车</h1>
+								<p>通过手机APP应用为广大有车一族提供上门洗车服务专业洗车的科技公司.足不出户，云端洗车</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+			        	<div class="row banner-row">
+							<div class="col-md-6 banner-column">
+								<img src="http://www.sx166.com/images/hand2.png" alt="" />
+							</div>
+							<div class="col-md-6 banner-column ban_cl">
+								<h1>APP下单</h1>
+								<p>只需您通过APP说明您的位置和车牌号以及需要完成的时间后,我们就会立刻有工作人员上门提供您所需的优质服务</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+			        	<div class="row banner-row">
+							<div class="col-md-6 banner-column">
+								<img src="http://www.sx166.com/images/hand3.png" alt="" />
+							</div>
+							<div class="col-md-6 banner-column ban_cl">
+								<h1>服务评价</h1>
+								<p>洗车完成后,请提出您的宝贵意见,让我们能更好的为您服务</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- End Of Slider -->
+		</div>
+	</div>
+	<!-- Banner Ends Here --->
+	<!-- About US Starts Here -->
+	<div class="about" id="about">
+		<div class="container">
+			<h3 class="top-head">关于我们</h3>
+			<span class="line">
+				<span class="sub-line"></span>
+			</span>
+			<P>随行科技是一家专注于汽车后服务的O2O公司。公司主要为车主提供上门洗车、汽车保险、及在线修车养车平台。为广大车主朋友提供在线和线下相结合的服务平台。</P>
+			<div class="row about-row">
+				<div class="col-md-3 about-column">
+					<i><img src="http://www.sx166.com/images/p1.jpg" alt="" /></i>
+					<h4  >人力部门</h4>
+					<P>人力部为企业实现其发展目标，对所需人力资源进行供求预测、制定系统人力资源政策和措施，以满足自身人力资源需求的活动</P>
+
+				</div>
+				<div class="col-md-3 about-column">
+					<i><img src="http://www.sx166.com/images/p2.jpg" alt=""/></i>
+					<h4>IT 部门</h4>
+					<P>IT部由以多名来自国内外大型科技公司高级人员为核心人员组成。团队始终保持着创业的热情和技术人员所独有的匠人精神，为客户开发最好的应用是我们的理念</P>
+
+				</div>
+				<div class="col-md-3 about-column">
+					<i><img src="http://www.sx166.com/images/p3.jpg" alt=""/></i>
+					<h4>财务部门</h4>
+					<P>严格贯彻和执行国家的财经制度及相关法规，建立健全公司财务管理、稽核等有关制度，督促各项制度的实施和执行；对经营过程实施财务监督、稽核、检查、协调和指导工作</P>
+
+				</div>
+				<div class="col-md-3 about-column">
+					<i><img src="http://www.sx166.com/images/p4.jpg" alt=""/></i>
+					<h4>运营部门</h4>
+					<P>随行科技运营团队分为线上与线下两部分工作，线上致力于使跟多的各户了解公司，并能方便的反馈问题。线下依托于实体店，是服务达到汽车5S店的标准，但价格只有4S店的5折</P>
+
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- About US Ends Here -->
+	<!-- Fun Facts Ends HEre -->
+	<div class="cots-row">
+		<div class="container">
+			<blockquote>
+				<h4>法拉第</h4>
+				<p>一旦科学插上幻想是翅膀</p>
+				<p class="cot_2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他就能赢得胜利</p>
+			</blockquote>
+		</div>
+	</div>
+	
+	<!-- Portfolio Starts Here -->
+	<!-- What We Do Starts Here -->
+	<div class="what-we" id="service">
+		<div class="container">
+			<h3 class="top-head">我们的服务</h3>
+			<span class="line l_2">
+				<span class="sub-line s_l_2"></span>
+			</span>
+			<p>我们为广大朋友提供在线和线下相结合的服务平台。为车主提供上门洗车、上门收衣和送衣的服务。对于您的爱车提供贴心的保险服务与专业的汽车保养。我们是一家具有实体网点的服务公司，全部网点为直营店。</p>
+			<div class="row what-we-row">
+				<div class="col-md-3 what-we-column">
+					<i class="brand"></i>
+					<h3>随行洗车</h3>
+					<p>随行洗车通过手机APP应用为广大有车一族提供上门洗车服务,有了他您只需坐在家中就能完成爱车的清洗</p>
+				</div>
+				<div class="col-md-3 what-we-column cl_1">
+					<i class="web"></i>
+					<h3>汽车保养</h3>
+					<p>我们坚持“高效、专业、便捷”的服务宗旨,以“为客户提供管家式服务”为使命,让您体会到不同于其他汽修店的新感受</p>
+				</div>
+				<div class="col-md-3 what-we-column cl_2">
+					<i class="dev"></i>
+					<h3>保险服务</h3>
+					<p>&nbsp;我们为车主办理车险，价格低，优惠大。结合您当地的情况和您的驾驶习惯给出为您量身定制的车险组合</p>
+				</div>
+				<div class="col-md-3 what-we-column cl_3">
+					<i class="sup"></i>
+					<h3>汽车维修</h3>
+					<p>我们为广大车友搭建修车及养车平台，提供故障咨询、维修预约、过程监控、交易保障等一站式服务</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- What We Do Ends Here -->
+	<!-- Fun Facts Starts HEre -->
+	<!--- Blog Starts Here -->
+	<div class="blog" id="blog">
+		<div class="container">
+			<h3 class="top-head">随行新闻</h3>
+			<span class="line">
+				<span class="sub-line"></span>
+			</span>
+			<p></p>
+			<div class="blog-top-grid">
+				<div class="blog-grid">
+					<div class="blog-date">
+						<i class="bl_a"></i>
+						<div class="d_a_t">
+							<p>01</p>
+							<small>Jan 2014</small>
+						</div>
+					</div>
+					<div class="blog-img">
+						<img src="http://www.sx166.com/images/bl_1.jpg" class="img-responsive" alt="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="blog-desc">
+						<h4>随行科技 汽车保险项目启动</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="blog-grid">
+					<div class="blog-date d_c_2">
+						<i class="bl_b"></i>
+						<div class="d_a_t">
+							<p>01</p>
+							<small>Mar 2014</small>
+						</div>
+					</div>
+					<div class="blog-img">
+						<img src="http://www.sx166.com/images/bl_2.jpg" class="img-responsive" alt="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="blog-desc">
+						<h4>随行科技 随行洗车项目启动</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="blog-grid grid_r">
+					<div class="blog-date d_c_3">
+						<i class="bl_c"></i>
+						<div class="d_a_t">
+							<p>24</p>
+							<small>Aug 2014</small>
+						</div>
+					</div>
+					<div class="blog-img">
+						<img src="http://www.sx166.com/images/bl_3.jpg" class="img-responsive" alt="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="blog-desc">
+						<h4>随行科技 微信服务号上线</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="blog-grid">
+					<div class="blog-date d_c_3">
+						<i class="bl_c"></i>
+						<div class="d_a_t">
+							<p>08</p>
+							<small>Oct 2014</small>
+						</div>
+					</div>
+					<div class="blog-img">
+						<img src="http://www.sx166.com/images/bl_4.jpg" class="img-responsive" alt="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="blog-desc">
+						<h4>随行科技 公司主页上线</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="blog-grid">
+					<div class="blog-date">
+						<i class="bl_d"></i>
+						<div class="d_a_t">
+							<p>01</p>
+							<small>Jan 2015</small>
+						</div>
+					</div>
+					<div class="blog-img">
+						<img src="http://www.sx166.com/images/bl_1.jpg" class="img-responsive" alt="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="blog-desc">
+						<h4>随行科技 随行APP上线</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="blog-grid grid_r">
+					<div class="blog-date d_c_2">
+						<i class="bl_e"></i>
+						<div class="d_a_t">
+							<p>01</p>
+							<small>Jan 2015</small>
+						</div>
+					</div>
+					<div class="blog-img">
+						<img src="http://www.sx166.com/images/bl_2.jpg" class="img-responsive" alt="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="blog-desc">
+						<h4>随行科技  上门洗衣服务启动</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!--- Blog Ends Here -->
+	<!-- Clients Starts Here -->
+	<div class="clients" id="clients">
+		<div class="container">
+			<h3 class="top-head w_hd">我们的合作伙伴</h3>
+			<span class="line">
+				<span class="sub-line"></span>
+			</span>
+			<div class="client-row">
+				<div class="cl-img">
+					<img src="http://www.sx166.com/images/cl-1.png" alt="">
+					<span class="liney"></span>
+				</div>
+				<div class="cl-img">
+					<img src="http://www.sx166.com/images/cl-2.png" alt="">
+					<span class="liney"></span>
+				</div>
+				<div class="cl-img">
+					<img src="http://www.sx166.com/images/cl-3.png" alt="">
+					<span class="liney"></span>
+				</div>
+				<div class="cl-img cl1-img">
+					<img src="http://www.sx166.com/images/cl-4.png" alt="">
+					<span class="liney"></span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="client-row client-row-2">
+				<div class="cl-img">
+					<img src="http://www.sx166.com/images/cl-5.png" alt="">
+				</div>
+				<div class="cl-img">
+					<img src="http://www.sx166.com/images/cl-6.png" alt="">
+				</div>
+				<div class="cl-img">
+					<img src="http://www.sx166.com/images/cl-7.png" alt="">
+				</div>
+				<div class="cl-img cl1-img">
+					<img src="http://www.sx166.com/images/cl-8.png" alt="">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- Clients Ends Here -->
+<!-- Contact Starts Here -->
+	<div class="contact" id="contact">
+			<h3 class="top-head">联系我们</h3>
+			<span class="line">
+				<span class="sub-line"></span>
+			</span>
+			<div class="container">
+				<div class="contact-box">
+				<form action="action/message.php" method="post">
+					<div class="text">
+						<input type="text"  placeholder="姓名" required=""  name = "username" id = "username"/>
+						<input type="text"  placeholder="电话" required="" name = "age" id = "age"/>
+					</div>
+					<div class="text">
+						<textarea  placeholder="留言" required="" id = "message" name = "message"></textarea>
+					</div>
+					<div class="text">
+						<input type="submit" name="submit" value="发送" />
+					</div>
+				</form>
+				</div>
+			</div>
+	</div>
+	<!-- Contact Ends Here -->
+	<!-- Footer Starts Here --->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-logo">
+				<a href="index.jsp"><img src="http://www.sx166.com/images/footer-logo.png" alt=""></a>
+			</div>
+			<div style="color: white;">
+						<p>大连市沙河口区香二街6-8号(华北路北行过沙河口火车站桥洞右转)</p>
+						<p>0411-84414146、84416146</p>
+					</div> 
+		</div>
+	</div>
+	<div class="copyright">
+		<div class="top-up">
+			<a href="#home" class="scroll"><img src="http://www.sx166.com/images/top-tp.png" alt=""></a>
+		</div>
+		<p>Copyright &copy; 2014-2015.随行科技 All rights reserved.辽ICP备14014291号</p>
+	</div>
+	<!-- Footer Ends Here --->
+<div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?927904ea747e3e4362cdb4b83a356639";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</div>
+</body>
+</html>
+
