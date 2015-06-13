@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.zjshenghuo.com/wxsc/puzzle/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="stick man,耍棍,小游戏,手机游戏,webAPP" name="Keywords">
+    <meta name="description" content="Webapp游戏新体验，Developed by woody">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>智商超过130的人才能玩到第40关哦</title>
+    <link rel="stylesheet" type="text/css" href="./game1_files/style.css">
+    <script src="./game1_files/hm.js"></script><script src="./game1_files/weixinapi.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./game1_files/jquery.min.js"></script>
+    <script src="./game1_files/public.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4f186299d53894d1eb4f226c02335236";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+   	<div class="point">
+   		0
+   	</div>
+  <!--
+
+  <div class="shouji">
+    	<img src="picture/bg1.png" class="img" />
+    </div>
+-->
+
+    <div class="point">
+   		0
+   	</div>
+   	<div class="tips">
+   		将手放在屏幕,使竿变长<br>据说智商超过130的人,<br>才能玩到第40关,<br>成绩发到湛江生活网（公众号zjsh24)来比拼哦<br>
+		<div align="center">
+		  <p><span class="STYLE2"><a href="">©</a>湛江生活网（www.zjshenghuo.com）小蛋 </span>
+</p>
+		    <p>
+			<a class="STYLE1">湛江生活网：一个懂湛江人的网站 !!!</a></p>
+		</div><br>
+
+   	</div>
+   <div id="main">
+   	 <div class="wall">
+     	
+   	 </div>
+   	 <div class="wall new" style="left: 50%;">
+   	 	
+   	 </div>
+   	 <div class="stick" style="transform-origin: 0px 0px 0px; transform: rotate(-90deg);"></div>
+   	 <div class="stickMan">
+   	 	<!--<img src="picture/stick.gif" width="5%"/>-->
+   	 	<img src="./game1_files/stick_stand.png" width="5%">
+   	 </div>
+   </div>
+   <!-- 游戏结束弹层-->
+   <div class="gameOver">
+   	    <h2>游戏结束!</h2>
+   	    <div class="showPoint">
+   	    	<p>分数</p>
+   	    	<p class="newPoint">0</p>
+   	    	<p>最佳</p>
+   	    	<p class="bestPoint">0</p>
+   	    </div>
+   	    <div class="btn share">分享</div>
+   	    <div class="btn again">再玩一次</div>
+   </div>
+   <div id="mask">
+		<img src="./game1_files/share_img01.gif">
+	</div>
+	
+	<div class="reloadImg" style="display: none;">
+		<img src="./game1_files/stick.gif">
+	</div>
+
+
+<script type="text/javascript">
+    var longStick;
+    var shortStick;
+    var screenWidth = document.documentElement.clientWidth;
+    var point = 0;
+    var speed = "5%";
+    function touchSatrtFunc(evt) {
+		if(point>=2){
+			$(".tips").hide();
+		}
+    	evt.preventDefault();
+   		document.addEventListener('touchend', touchEndFunc, false);
+    	initStick();
+    	//longStick = setInterval(function(){
+    	//    $('.stick').css({width:'+='+speed});
+    	//},30);
+    	getLong();
+    	document.removeEventListener('touchstart', touchSatrtFunc, false);
+    }
+    function getLong() {
+		if(point>5){
+				//alert(point);
+				speed="5%";	
+			}
+    	longStick = setInterval(function() {
+			
+    		var stickWidth = getWidthNumber($('.stick').css('width'));
+    		if(stickWidth<=screenWidth){
+    			$('.stick').css({width:'+='+speed});
+    		}else{
+    			clearInterval(longStick);
+    			getShort();
+    		}
+    	},30);
+    }
+    function getShort() {
+		if(point>5){
+			//alert(point);
+			speed="10%";	
+		}
+    	shortStick = setInterval(function() {
+			
+    		var stickWidth = getWidthNumber($('.stick').css('width'));
+    		if(stickWidth>0){
+    			$('.stick').css({width:'-='+speed});
+    		}else{
+    			clearInterval(shortStick);
+    			getLong();
+    		}
+    	},30);
+    }
+    function getWidthNumber(ele){
+   		if (ele) {
+   			var WidthNumber = ele.substr(0,ele.length-2);
+   			WidthNumber = Number(WidthNumber);
+   			return WidthNumber;
+   		}
+    }
+    function touchEndFunc(evt) {
+    	clearBind();
+    	evt.preventDefault();
+    	clearInterval(longStick);
+    	clearInterval(shortStick);
+    	setTimeout(function(){
+    	    $('.stick').css('transition','.6s');
+    	    $('.stick').css('transform','rotate(0deg)');
+    	    setTimeout('checkStickLong.check()',600);
+    	},200);
+    }
+    function touchMoveFunc(evt){
+    	evt.preventDefault();
+    }
+    function initStick() {
+    	$(".stick").css({'transition':'0','transform':'rotate(-90deg)','width':'0','left':'20%'});
+    }
+    	  	
+   	function init(){
+   		$(".stick").css({'transform-origin':'0 0','transform':'rotate(-90deg)'});
+   		addBind();
+   		document.addEventListener('touchmove', touchMoveFunc, false);
+   		$(".again").click(function(){
+   			$(".gameOver").css('display','none');
+   			addBind();
+   			$(".point,.tips").css('display','block');
+   			point = 0;
+			speed="5%";
+   			$(".point").html(point);
+   			$(".wall").eq(0).css({'left':'0','width':'20%'});
+   			$(".new").css({'left':'50%','width':'20%'});
+   			$(".stick").css('transition','0')
+   			$(".stick").css('width','0');
+   			$(".stickMan").css({'left':'15.5%','bottom':'66.5%'});
+   			$("body").css('background-position-x', '0');
+		    $(".stickMan img").attr({'src':'picture/stick_stand.png'});
+			$(".shouji").css({"left":"0%"});
+   		});
+   		$(".share").click(function(){
+   			$("#mask").css('display','block');
+   		});
+   		$("#mask").click(function(){
+   			$("#mask").css('display','none');
+   		});
+   		
+   	}
+   	function addBind() {
+   		document.addEventListener('touchstart', touchSatrtFunc, false);  
+   	}
+   	function clearBind() {
+   		document.removeEventListener('touchstart', touchSatrtFunc, false);
+   		document.removeEventListener('touchend', touchEndFunc, false);
+   	}
+   	
+   	function orientationChange() {
+    switch(window.orientation) {
+
+    　　case 0: 
+            addBind();
+            $("body").css('transform','');
+            break;
+
+    　　case -90: 
+            clearBind();
+            alert("游戏要竖屏玩哟！！！");
+            $("body").css('transform','rotate(90deg)');
+
+            break;
+
+    　　case 90:   
+            clearBind();
+            alert("游戏要竖屏玩哟！！！");
+            $("body").css('transform','rotate(-90deg)');
+            break;
+
+    　　case 180:   
+            addBind();
+            $("body").css('transform','rotate(0deg)');
+        　　break;
+
+    }
+}
+    
+    
+   	$(document).ready(function(){
+   	    init();
+   	     orientationChange();
+         window.onorientationchange = orientationChange;
+         shareToWeixin();
+   	})
+</script>
+<div style="display:none">
+<!-- act.thindo.com域名 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F74ffdaa284fc9c6a896190955074a389' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./game1_files/h.js" type="text/javascript"></script>
+</div>
+</body></html>
