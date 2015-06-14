@@ -20,16 +20,16 @@ var checkStickLong = {
 		}
 	},
 	run:function(){
-		$(".stickMan img").attr({'src':'img/stick.gif'});
+		$(".stickMan img").attr({'src':'./game1_files/stick.gif'});
 		var moveNumber = this.getWidthNumber($(".wall").eq(1).css('left'))+this.getWidthNumber($(".wall").eq(1).css('width'))-screenWidth*0.2;
 		$(".stickMan").animate({left:'+='+moveNumber+'px'},1000);
 		$("body").css('background-position-x', '-'+(point+1)*20+'px');
 		setTimeout(function(){
-			$(".stickMan img").attr({'src':'img/stick_stand.png'});
+			$(".stickMan img").attr({'src':'./game1_files/stick_stand.png'});
 		},1000);
 	},
 	getDown:function(){
-		$(".stickMan img").attr({'src':'img/stick.gif'});
+		$(".stickMan img").attr({'src':'./game1_files/stick.gif'});
 		var me = this;
 		$(".stickMan").animate({left:'+='+$(".stick").css('width')},1000);
 		$("body").css('background-position-x', '-'+(point+1)*30+'px');
@@ -116,23 +116,26 @@ var checkStickLong = {
 
 function shareToWeixin(){
 WeixinApi.ready(function(Api) {
-
+	//Api.hideOptionMenu();
+	//alert('weixin ready');
+	
                 // 微信分享的数据
-                var desc = '智商超过130的人才能玩到第40关！！！！';
+                var desc = '玩到第40关 免费送汽车空调清洗一次！！！！';
                 var bestPoint = window.sessionStorage.getItem('stickManPoint');
                 if(!bestPoint||bestPoint==0){
-                	desc ='智商超过130的人才能玩到第40关！！！！';
+                	desc ='玩到第40关 免费送汽车空调清洗一次！！！！';
                 } else {
 					if(bestPoint>=40){
-						desc ='我居然获得了'+bestPoint+'分！去和和商城分享比拼喽！';
+						alert('通关');
+						desc ='我居然获得了'+bestPoint+'分！免费汽车空调清洗到手！！！';
 					}else if(bestPoint<40){
-						desc ='我才得了'+bestPoint+'分！还需要继续努力哦！';
+						desc ='我得了'+bestPoint+'分！继续努力中！';
 					}
                 }
                 var wxData = {
-                    "appId": wxcfdc424062594fbe, // 服务号可以填写appId
-                    "imgUrl" : 'http://smartmercado.com/wxsc/puzzle/paolu/img/paolu.jpg',
-                    "link" : 'http://smartmercado.com/wxsc/puzzle/paolu/index.html',
+                  //  "appId": wx12f726ef909fb066, // 服务号可以填写appId
+                    "imgUrl" : 'http://123.56.123.54:8080/website/activity/game/game1/game1_files/paolu.jpg',
+                    "link" : 'http://123.56.123.54:8080/website/activity/game/game1/game1.html',
                     "desc" : desc,
                     "title" : desc
                 };
@@ -145,12 +148,12 @@ WeixinApi.ready(function(Api) {
                     // 分享操作开始之前
                     ready : function() {
                         // 你可以在这里对分享的数据进行重组
-                        //alert("准备分享");
+                        alert("准备分享");
                     },
                     // 分享被用户自动取消
                     cancel : function(resp) {
                         // 你可以在你的页面上给用户一个小Tip，为什么要取消呢？
-                        //alert("分享被取消，msg=" + resp.err_msg);
+                        alert("分享被取消，msg=" + resp.err_msg);
                     },
                     // 分享失败了
                     fail : function(resp) {
@@ -165,6 +168,7 @@ WeixinApi.ready(function(Api) {
                     },
                     // 整个分享过程结束
                     all : function(resp,shareTo) {
+                    	 alert("all");
                         // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
                         //alert("分享" + (shareTo ? "到" + shareTo : "") + "结束，msg=" + resp.err_msg);
                     }
